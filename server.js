@@ -39,7 +39,7 @@ app.use('/api', authRoutes);
 app.use('/api', userRoutes);
 
 app.get("/", (res, req) => {
-    res.redirect("api");
+    res.send("api");
 });
 
 const port = process.env.PORT || 8000;
