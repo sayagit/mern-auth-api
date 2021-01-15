@@ -27,11 +27,11 @@ const userRoutes = require('./routes/user');
 app.use(morgan('dev'));
 
 app.use(bodyParser.json());
-//cors：postmanを使う際にブラウザをCORS対応させる
-// app.use(cors()); // allows all origins
-if ((process.env.NODE_ENV = 'development')) {
-    app.use(cors({ origin: `http://localhost:3000` }));
-}
+cors：postmanを使う際にブラウザをCORS対応させる
+app.use(cors()); // allows all origins
+// if ((process.env.NODE_ENV = 'development')) {
+//     app.use(cors({ origin: `http://localhost:3000` }));
+// }
 
 // middleware
 //localhost:8000/api以降のgetリクエストを”./routes/auth.js”とuser.jsで処理する
