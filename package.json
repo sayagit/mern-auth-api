@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "build": "webpack"
   },
+  "heroku-run-build-script": true,
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -14,6 +16,7 @@
     "npm": "6.14.8"
   },
   "dependencies": {
+    "@heroku/update-node-build-script": "^1.0.3",
     "@sendgrid/mail": "^7.4.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
