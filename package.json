@@ -29,6 +29,7 @@
     "mongoose": "^5.11.9",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.6",
+    "webpack": "^5.14.0",
     "webpack-dev-server": "^3.11.2"
   }
 }
