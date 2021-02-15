@@ -18,10 +18,6 @@ mongoose
     .then(() => console.log('DB connected'))
     .catch(err => console.log('DB CONNECTION ERROR: ', err));
 
-//import routes
-const authRoutes = require('./routes/auth');
-const userRoutes = require('./routes/user');
-
 // app middlewares
 //morgan:ログ出力するライブラリ
 app.use(morgan('dev'));
@@ -32,6 +28,10 @@ app.use(cors()); // allows all origins
 // if ((process.env.NODE_ENV = 'development')) {
 //     app.use(cors({ origin: `http://localhost:3000` }));
 // }
+
+//import routes
+const authRoutes = require('./routes/auth');
+const userRoutes = require('./routes/user');
 
 // middleware
 //localhost:8000/api以降のgetリクエストを”./routes/auth.js”とuser.jsで処理する
