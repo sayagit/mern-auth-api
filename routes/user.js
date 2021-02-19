@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+
 // import controller
 const { requireSignin, adminMiddleware } = require('../controllers/auth');
 const { read, update } = require('../controllers/user');

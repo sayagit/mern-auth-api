@@ -1,5 +1,6 @@
 const ScheduleItem = require('../models/scheduleItem');
 
+
 exports.saveNewItem = (req, res) => {
     const { title, start, end, allDay } = req.body;
     const scheduleItem = new ScheduleItem({ title, start, end, allDay });
@@ -13,7 +14,8 @@ exports.saveNewItem = (req, res) => {
             });
         }
         return res.json({
-            message: 'SUCCESS SAVING ITEM'
+            message: 'SUCCESS SAVING ITEM',
+            item: item
         });
     });
 }

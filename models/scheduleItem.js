@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+
 const scheduleItemSchema = new mongoose.Schema({
     title: {
         type: String,
