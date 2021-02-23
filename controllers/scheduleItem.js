@@ -33,3 +33,34 @@ exports.readItems = (req, res) => {
         });
     });
 };
+
+//DBで該当scheduleItemを検索→saveで上書き
+exports.updateItem = (req, res) => {
+    const { id, title, start, end, allday } = req.body;
+    ScheduleItem.findOne({ _id: id }, (err, item) => {
+        if (err || !item) {
+            return res.status(401).json({
+                error: 'ITEM NOT FOUND'
+            });
+        } else {
+            item.title = title;
+            item.start = start;
+            item.end = end;
+            item.allday = allday;
+        }
+
+        //scheduleItemを保存(上書き)する
+        item.save((err, updatedItem) => {
+            if (err) {
+                console.log('ITEM UPDATE ERROR', err);
+                return res.status(401).json({
+                    error: 'ITEM UPDATE FAILED'
+                });
+            }
+            return res.json({
+                item: updatedItem,
+                message: "SUCCESS UPDATING ITEM"
+            });
+        });
+    });
+}
